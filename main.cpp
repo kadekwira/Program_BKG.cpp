@@ -13,11 +13,34 @@
 
 
 using namespace std;
+string kondisi(string player,string com)
+{
 
+  if(player=="Batu")
+    {
+        if(com=="Batu"){cout<<" SERI "<<endl;}
+        else if(com=="Gunting"){cout<<" Player Menang "<<endl;}
+        else if(com=="Kertas"){cout<<" Player Kalah "<<endl;}
+    }
+    else if(player=="Gunting")
+    {
+         if(com=="Batu"){cout<<" Player Kalah "<<endl;}
+        else if(com=="Gunting"){cout<<" SERI "<<endl;}
+        else if(com=="Kertas"){cout<<" Player Menang "<<endl;}
+    }
+    else if(player=="Kertas")
+    {
+         if(com=="Batu"){cout<<" Player Menang "<<endl;}
+        else if(com=="Gunting"){cout<<" Player Kalah "<<endl;}
+        else if(com=="Kertas"){cout<<" Seri "<<endl;}
+    }
+
+}
 int main()
 {
     char ulang;
     do{
+
         int pilihan,kom;
         string isi[3]={"Batu","Gunting","Kertas"};
 
@@ -41,24 +64,7 @@ int main()
     cout<<" Player   : "<<isi[pilihan-1]<<endl;
     cout<<" Computer : "<<isi[kom-1]<<endl;
 
-  if(isi[pilihan-1]=="Batu")
-    {
-        if(isi[kom-1]=="Batu"){cout<<" SERI "<<endl;}
-        else if(isi[kom-1]=="Gunting"){cout<<" Player Menang "<<endl;}
-        else if(isi[kom-1]=="Kertas"){cout<<" Player Kalah "<<endl;}
-    }
-    else if(isi[pilihan-1]=="Gunting")
-    {
-         if(isi[kom-1]=="Batu"){cout<<" Player Kalah "<<endl;}
-        else if(isi[kom-1]=="Gunting"){cout<<" SERI "<<endl;}
-        else if(isi[kom-1]=="Kertas"){cout<<" Player Menang "<<endl;}
-    }
-    else if(isi[pilihan-1]=="Kertas")
-    {
-         if(isi[kom-1]=="Batu"){cout<<" Player Menang "<<endl;}
-        else if(isi[kom-1]=="Gunting"){cout<<" Player Kalah "<<endl;}
-        else if(isi[kom-1]=="Kertas"){cout<<" Seri "<<endl;}
-    }
+    kondisi(isi[pilihan-1],isi[kom-1]);
 
 cout<<endl;
 
